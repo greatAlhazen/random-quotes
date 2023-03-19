@@ -19,25 +19,24 @@
     <title>Random Quotes</title>
   </head>
   <body>
-    <div class="quote">
+    <div class="quote" id="quote-box">
       <div class="quote__title">
         <i class="fa-solid fa-quote-left quote__icon"></i>
-        <span class="quote__text"
-          >Be yourself; everyone else is already taken.</span
-        >
+        <span class="quote__text" id="quote"></span>
       </div>
       <div class="quote__author">
-        <span id="author">Oscar wilde</span>
+        <span id="author"></span>
       </div>
 
       <div class="quote__button-box">
-        <button class="quote__button" id="twitte-btn" title="Share on twitter">
+        <button class="quote__button" id="twitter-btn" title="Share on twitter">
           <i class="fab fa-twitter"></i>
         </button>
         <button class="quote__button" id="new-quote">Load new</button>
       </div>
     </div>
 
-    <script class="script.js"></script>
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
