@@ -15,10 +15,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- favicon bug: https://stackoverflow.com/questions/31075893/how-to-fix-favicon-ico-error-failed-to-load-resource-neterr-empty-response -->
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="style.css" />
     <title>Random Quotes</title>
   </head>
   <body>
+    <!-- quote container -->
     <div class="quote" id="quote-box">
       <div class="quote__title">
         <i class="fa-solid fa-quote-left quote__icon"></i>
@@ -34,6 +37,18 @@
         </button>
         <button class="quote__button" id="new-quote">Load new</button>
       </div>
+    </div>
+
+    <!-- spinner -->
+    <div class="loader" id="loader">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+      <div class="bar bar4"></div>
+      <div class="bar bar5"></div>
+      <div class="bar bar6"></div>
+      <div class="bar bar7"></div>
+      <div class="bar bar8"></div>
     </div>
 
     <script src="quotes.js"></script>

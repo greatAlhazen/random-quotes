@@ -22,6 +22,8 @@ button {
   cursor: pointer;
 }
 
+/* quote container  */
+
 .quote {
   position: absolute;
   top: 50%;
@@ -97,6 +99,65 @@ button {
 .quote__button:active {
   transform: translate(0, 0.3rem);
   box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
+/* spinner  */
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bar {
+  width: 1em;
+  height: 7em;
+  background: #fff;
+  display: inline-block;
+  transform-origin: bottom center;
+  border-top-right-radius: 2em;
+  border-top-left-radius: 2em;
+  animation: spinner 1.4s linear infinite;
+}
+.bar1 {
+  animation-delay: 0.1s;
+}
+.bar2 {
+  animation-delay: 0.2s;
+}
+.bar3 {
+  animation-delay: 0.3s;
+}
+.bar4 {
+  animation-delay: 0.4s;
+}
+.bar5 {
+  animation-delay: 0.5s;
+}
+.bar6 {
+  animation-delay: 0.6s;
+}
+.bar7 {
+  animation-delay: 0.7s;
+}
+.bar8 {
+  animation-delay: 0.8s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: scaleY(0.1);
+    background: #242582;
+  }
+  50% {
+    transform: scaleY(1);
+    background: #553d67;
+  }
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
+  }
 }
 
 @media screen and (max-width: 900px) {

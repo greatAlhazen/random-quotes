@@ -8,11 +8,24 @@ const loader = document.querySelector("#loader");
 let quotes = [];
 const API_URL = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
 
+// loader configuration
+const loadingSpinner = () => {
+  loader.hidden = false;
+  quoteBox.hidden = true;
+};
+
+const closeSpinner = () => {
+  loader.hidden = true;
+  quoteBox.hidden = false;
+};
+
 const getQuotes = async () => {
+  loadingSpinner();
   try {
     const response = await fetch(API_URL);
     quotes = await response.json();
   } catch (err) {
+    // if response not ok use local quotes
     quotes = localQuotes;
   }
 
@@ -20,8 +33,10 @@ const getQuotes = async () => {
 };
 
 const showQuote = () => {
+  loadingSpinner();
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
+  // blank or anonymus qupte author
   if (!quote.author || quote.author === "Anonymous") {
     author.textContent = "Unkown";
   } else {
@@ -35,7 +50,7 @@ const showQuote = () => {
   }
 
   quoteText.textContent = quote.text;
-  console.log(quoteText.textContent);
+  closeSpinner();
 };
 
 function shareQuote() {
